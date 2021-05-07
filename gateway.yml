@@ -41,7 +41,7 @@ spring:
           - Path=/product-catalog/**
           filters:
           - RewritePath=/product-catalog/(?<path>.*), /$\{path}
-          - RemoveRequestHeader= Cookie,Set-Cookie
+#           - RemoveRequestHeader= Cookie,Set-Cookie
 
 # keycloak:
 #    auth-server-url: http://localhost:8080/auth
