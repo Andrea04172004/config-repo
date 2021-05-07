@@ -48,13 +48,7 @@ spring:
           filters:
             - RewritePath=/product-catalog/(?<path>.*), /$\{path}
             - RemoveRequestHeader= Cookie,Set-Cookie
-        - id: angular
-          uri: lb://localhost:4200
-          predicates:
-            - Path=/localhost:4200/**
-          filters:
-            - RewritePath=/localhost:4200/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+            - Access-Control-Allow-Origin=http://localhost:4200
 
 
 
