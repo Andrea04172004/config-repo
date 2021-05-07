@@ -18,8 +18,8 @@ spring:
     loadbalancer.ribbon.enabled: false
     gateway:
       discovery.locator:
-       enabled: true
-       lowerCaseServiceId: true
+        enabled: true
+        lowerCaseServiceId: true
       routes:
         - id: storage-service
           uri: lb://storage-service
@@ -38,10 +38,19 @@ spring:
         - id: product-catalog-service
           uri: lb://product-catalog-service
           predicates:
-          - Path=/product-catalog/**
-#           filters:
-#           - RewritePath=/product-catalog/(?<path>.*), /$\{path}
-#           - RemoveRequestHeader= Cookie,Set-Cookie
+            - Path=/product-catalog/**
+          filters:
+            - RewritePath=/product-catalog/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: angular
+          uri: lb://localhost:4200
+          predicates:
+            - Path=/localhost:4200/**
+          filters:
+            - RewritePath=/localhost:4200/(?<path>.*), /$\{path}
+            - RemoveRequestHeader= Cookie,Set-Cookie
+        
+
 
 # keycloak:
 #    auth-server-url: http://localhost:8080/auth
@@ -53,13 +62,13 @@ spring:
 #    ssl-required: external
 #    cors: true
 #    public-client: true
-keycloak:
-    auth-server-url: http://localhost:8080/auth
-    bearer-only: true
-    public-client: true
-    realm: adetails-realm
-    resource: adetails
-    cors: true
+# keycloak:
+#     auth-server-url: http://localhost:8080/auth
+#     bearer-only: true
+#     public-client: true
+#     realm: adetails-realm
+#     resource: adetails
+#     cors: true
 
 
 management:
