@@ -48,8 +48,7 @@ spring:
           filters:
             - RewritePath=/product-catalog/(?<path>.*), /$\{path}
             - RemoveRequestHeader= Cookie,Set-Cookie
-            - Access-Control-Allow-Origin=http://localhost:4200
-
+         
 
 
 # keycloak:
