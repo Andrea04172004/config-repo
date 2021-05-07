@@ -51,7 +51,8 @@ spring:
    # realm: spmia-realm
    # resource: adetails
    # ssl-required: external
-
+keycloak:
+  cors: true
 
 management:
   endpoints:
