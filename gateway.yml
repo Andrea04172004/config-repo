@@ -39,8 +39,8 @@ spring:
           uri: lb://product-catalog-service
           predicates:
           - Path=/product-catalog/**
-          filters:
-          - RewritePath=/product-catalog/(?<path>.*), /$\{path}
+#           filters:
+#           - RewritePath=/product-catalog/(?<path>.*), /$\{path}
 #           - RemoveRequestHeader= Cookie,Set-Cookie
 
 # keycloak:
