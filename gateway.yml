@@ -43,17 +43,19 @@ spring:
           - RewritePath=/product-catalog/(?<path>.*), /$\{path}
           - RemoveRequestHeader= Cookie,Set-Cookie
 
-#keycloak:
-   # auth-server-url: http://localhost:8080/auth
-    #bearer-only: true
-    #credentials:
-     #   secret: d1daa730-9c1a-4bcf-b29e-74799a0caf68
-   # realm: spmia-realm
-   # resource: adetails
-   # ssl-required: external
 keycloak:
-  cors: true
-  public-client: true
+   auth-server-url: http://localhost:8080/auth
+    bearer-only: true
+    credentials:
+       secret: d1daa730-9c1a-4bcf-b29e-74799a0caf68
+   realm: adetails-realm
+   resource: adetails
+   ssl-required: external
+   cors: true
+   public-client: true
+# keycloak:
+#   cors: true
+#   public-client: true
 
 management:
   endpoints:
