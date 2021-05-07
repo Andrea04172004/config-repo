@@ -57,8 +57,9 @@ keycloak:
     auth-server-url: http://localhost:8080/auth
     bearer-only: true
     public-client: true
-    realm: demo
-    resource: my-app
+    realm: adetails-realm
+    resource: adetails
+    cors: true
 
 
 management:
