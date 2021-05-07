@@ -53,6 +53,7 @@ spring:
    # ssl-required: external
 keycloak:
   cors: true
+  public-client: true
 
 management:
   endpoints:
