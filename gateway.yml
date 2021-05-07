@@ -53,9 +53,13 @@ spring:
 #    ssl-required: external
 #    cors: true
 #    public-client: true
-# keycloak:
-#   cors: true
-#   public-client: true
+keycloak:
+    auth-server-url: http://localhost:8080/auth
+    bearer-only: true
+    public-client: true
+    realm: demo
+    resource: my-app
+
 
 management:
   endpoints:
