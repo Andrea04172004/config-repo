@@ -62,7 +62,7 @@ spring:
 #    cors: true
 #    public-client: true
 keycloak:
-    auth-server-url: http://localhost:8080/auth
+    auth-server-url: http://keycloak:8080/auth
     bearer-only: true
     public-client: true
     realm: adetails-realm
