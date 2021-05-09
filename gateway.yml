@@ -62,13 +62,13 @@ spring:
 #    ssl-required: external
 #    cors: true
 #    public-client: true
-keycloak:
-  auth-server-url: http://keycloak:8080/auth
-  bearer-only: true
-  public-client: true
-  realm: adetails-realm
-  resource: adetails-back
-  cors: true
+#keycloak:
+ # auth-server-url: http://keycloak:8080/auth
+ # bearer-only: true
+  #public-client: true
+  #realm: adetails-realm
+  #resource: adetails-back
+ # cors: true
 
 
 management:
