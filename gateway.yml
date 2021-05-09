@@ -18,16 +18,12 @@ spring:
     loadbalancer.ribbon.enabled: false
     gateway:
       globalcors:
-        corsConfigurations:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
           '[/**]':
-            allowedOrigins: "http://localhost:4200"
+            allowedOrigins: "*"
             allowedMethods:
               - GET
-              - PUT
-              - POST
-              - PATCH
-              - DELETE
-              - OPTIONS
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
@@ -53,7 +49,7 @@ spring:
           filters:
             - RewritePath=/product-catalog/(?<path>.*), /$\{path}
             - RemoveRequestHeader= Cookie,Set-Cookie
-         
+
 
 
 # keycloak:
@@ -67,12 +63,12 @@ spring:
 #    cors: true
 #    public-client: true
 keycloak:
-    auth-server-url: http://keycloak:8080/auth
-    bearer-only: true
-    public-client: true
-    realm: adetails-realm
-    resource: adetails-back
-    cors: true
+  auth-server-url: http://keycloak:8080/auth
+  bearer-only: true
+  public-client: true
+  realm: adetails-realm
+  resource: adetails-back
+  cors: true
 
 
 management:
