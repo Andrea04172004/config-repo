@@ -54,6 +54,7 @@ spring:
           filters:
             - RewritePath=/product-catalog/(?<path>.*), /$\{path}
             - RemoveRequestHeader= Cookie,Set-Cookie
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
          
 
 
