@@ -19,11 +19,11 @@ spring:
     gateway:
      globalcors:
         add-to-simple-url-handler-mapping: true
-   #     cors-configurations:
-   #      '[/**]':
-   #         allowedOrigins: "http://localhost:4200"
-   #         allowedMethods:
-   #           - GET
+        cors-configurations:
+         '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
