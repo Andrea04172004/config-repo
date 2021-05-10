@@ -17,58 +17,58 @@ spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-     globalcors:
+      globalcors:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
-         '[/**]':
+          '[/**]':
             allowedOrigins: "http://localhost:4200"
             allowedMethods:
               - GET
-      discovery.locator:
-        enabled: true
-        lowerCaseServiceId: true
-      routes:
-        - id: storage-service
-          uri: lb://storage-service
-          predicates:
-            - Path=/storage-service/**
-          filters:
-            - RewritePath=/storage-service/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
-        - id: staff-management-service
-          uri: lb://staff-management-service
-          predicates:
-            - Path=/staff-management/**
-          filters:
-            - RewritePath=/staff-management/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
-        - id: product-catalog-service
-          uri: lb://product-catalog-service
-          predicates:
-            - Path=/product-catalog/**
-          filters:
-            - RewritePath=/product-catalog/(?<path>.*), /$\{path}
-            - RemoveRequestHeader= Cookie,Set-Cookie
+        discovery.locator:
+          enabled: true
+          lowerCaseServiceId: true
+        routes:
+          - id: storage-service
+            uri: lb://storage-service
+            predicates:
+              - Path=/storage-service/**
+            filters:
+              - RewritePath=/storage-service/(?<path>.*), /$\{path}
+              - RemoveRequestHeader= Cookie,Set-Cookie
+          - id: staff-management-service
+            uri: lb://staff-management-service
+            predicates:
+              - Path=/staff-management/**
+            filters:
+              - RewritePath=/staff-management/(?<path>.*), /$\{path}
+              - RemoveRequestHeader= Cookie,Set-Cookie
+          - id: product-catalog-service
+            uri: lb://product-catalog-service
+            predicates:
+              - Path=/product-catalog/**
+            filters:
+              - RewritePath=/product-catalog/(?<path>.*), /$\{path}
+              - RemoveRequestHeader= Cookie,Set-Cookie
 
 
 
-# keycloak:
-#    auth-server-url: http://localhost:8080/auth
-#     bearer-only: true
-#     credentials:
-#        secret: d1daa730-9c1a-4bcf-b29e-74799a0caf68
-#    realm: adetails-realm
-#    resource: adetails
-#    ssl-required: external
-#    cors: true
-#    public-client: true
-#keycloak:
- # auth-server-url: http://keycloak:8080/auth
- # bearer-only: true
+  # keycloak:
+  #    auth-server-url: http://localhost:8080/auth
+  #     bearer-only: true
+  #     credentials:
+  #        secret: d1daa730-9c1a-4bcf-b29e-74799a0caf68
+  #    realm: adetails-realm
+  #    resource: adetails
+  #    ssl-required: external
+  #    cors: true
+  #    public-client: true
+  #keycloak:
+  # auth-server-url: http://keycloak:8080/auth
+  # bearer-only: true
   #public-client: true
   #realm: adetails-realm
   #resource: adetails-back
- # cors: true
+  # cors: true
 
 
 management:
