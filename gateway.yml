@@ -21,9 +21,9 @@ spring:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedMethods:
-              - GET
+   #         allowedOrigins: "http://localhost:4200"
+   #         allowedMethods:
+   #           - GET
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
