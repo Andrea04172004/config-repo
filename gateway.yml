@@ -17,13 +17,13 @@ spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-#     globalcors:
-#        add-to-simple-url-handler-mapping: true
-#        cors-configurations:
-#          '[/**]':
-#            allowedOrigins: "http://localhost:4200"
-#            allowedMethods:
-#              - GET
+     globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
