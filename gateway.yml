@@ -8,7 +8,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://eurekaserver/eureka/
+      defaultZone: http://eurekaserver:8761/eureka/
 
 
 
@@ -58,22 +58,7 @@ spring:
          
 
 
-# keycloak:
-#    auth-server-url: http://localhost:8080/auth
-#     bearer-only: true
-#     credentials:
-#        secret: d1daa730-9c1a-4bcf-b29e-74799a0caf68
-#    realm: adetails-realm
-#    resource: adetails
-#    ssl-required: external
-#    cors: true
-#    public-client: true
 keycloak:
-#    auth-server-url: http://keycloak:8080/auth
-#    bearer-only: true
-#    public-client: true
-#    realm: adetails-realm
-#    resource: adetails-back
     cors: true
 
 
