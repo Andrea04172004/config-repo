@@ -55,11 +55,20 @@ spring:
             - RewritePath=/product-catalog/(?<path>.*), /$\{path}
             - RemoveRequestHeader= Cookie,Set-Cookie
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-         
+        - id: tecdoc-service
+            uri: lb://tecdoc-service
+            predicates:
+              - Path=/tecdoc/**
+            filters:
+              - RewritePath=/tecdoc/(?<path>.*), /$\{path}
+              - RemoveRequestHeader= Cookie,Set-Cookie
+              - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+
+
 
 
 keycloak:
-    cors: true
+  cors: true
 
 
 management:
